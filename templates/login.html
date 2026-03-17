@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CTS Portal | Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&display=swap');
+        body { margin: 0; font-family: 'Outfit', sans-serif; background-color: #f5efe6; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .login-card { background: #ffffff; padding: 50px; border: 4px solid #000; box-shadow: 12px 12px 0px #000; width: 380px; text-align: center; }
+        h1 { font-size: 42px; margin: 0; color: #000; font-weight: 800; letter-spacing: -1px; }
+        p { color: #000; margin-bottom: 30px; font-weight: 600; font-size: 14px; }
+        select, input { width: 100%; padding: 15px; margin: 12px 0; border: 3px solid #000; font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 600; box-sizing: border-box; }
+        button { width: 100%; padding: 18px; background: #ccff00; border: 3px solid #000; font-weight: 800; font-size: 18px; margin-top: 20px; cursor: pointer; box-shadow: 4px 4px 0px #000; transition: 0.2s; }
+        button:hover { background: #ff4d4d; transform: translate(-2px, -2px); box-shadow: 8px 8px 0px #000; }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h1>CTS PORTAL</h1>
+        <p>SMART CAMPUS INFRASTRUCTURE</p>
+        <form action="/auth" method="POST">
+            <select name="role">
+                <option value="student">STUDENT ACCOUNT</option>
+                <option value="admin">STAFF / ADMIN</option>
+            </select>
+            <input type="text" name="username" placeholder="YOUR NAME / ID" required>
+            <input type="password" placeholder="PASSWORD" required>
+            <button type="submit">ENTER SYSTEM</button>
+        </form>
+    </div>
+</body>
+</html>
