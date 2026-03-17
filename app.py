@@ -13,6 +13,29 @@ def get_db():
     conn.row_factory = sqlite3.Row
     return conn
 
+# 🔥 AUTO CREATE TABLE (CRITICAL FOR RENDER)
+def init_db():
+    conn = get_db()
+    conn.execute('''
+    CREATE TABLE IF NOT EXISTS tickets (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        ref_no TEXT,
+        student_name TEXT,
+        category TEXT,
+        floor TEXT,
+        room_details TEXT,
+        description TEXT,
+        image_path TEXT,
+        status TEXT DEFAULT 'Open',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+    ''')
+    conn.commit()
+    conn.close()
+
+# Run DB init at startup
+init_db()
+
 # ---------------- AI IMAGE ANALYSIS ----------------
 def analyze_image(image_path):
     try:
